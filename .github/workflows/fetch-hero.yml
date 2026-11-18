@@ -1,0 +1,41 @@
+name: Fetch original high resolution approved ski hero
+on:
+  push:
+    paths:
+      - '.github/workflows/fetch-hero.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  get-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Attempt full resolution Canva media retrieval
+        env:
+          CANDIDATE0: 'https://media.canva.com/v2/image-resize/format:PNG/height:941/quality:100/uri:ifs%3A%2F%2FM%2F97f5b7df-3b70-4ea9-b4ac-e01930cfe077/watermark:F/width:1672?csig=AAAAAAAAAAAAAAAAAAAAABU58jSQvup9o4TDCHveA11NaI2dEV9nicRNNaZkHIKv&exp=1794997921&osig=AAAAAAAAAAAAAAAAAAAAAEC40eM_RsniqGBcnyQTrl_H9o4NGMq5l_ZOV_pHHDbw&signer=media-rpc&token=AAIAAU0AJDk3ZjViN2RmLTNiNzAtNGVhOS1iNGFjLWUwMTkzMGNmZTA3NwAAAAABoe42pOjK6Hvy3XCprBYK7BTH58BzUtdQOie1bk7PgG305bsusA&x-canva-quality=thumbnail'
+          CANDIDATE1: 'https://media.canva.com/v2/image-resize/format:PNG/height:941/quality:100/uri:ifs%3A%2F%2FM%2F97f5b7df-3b70-4ea9-b4ac-e01930cfe077/watermark:F/width:1672?csig=AAAAAAAAAAAAAAAAAAAAABU58jSQvup9o4TDCHveA11NaI2dEV9nicRNNaZkHIKv&exp=1794997921&osig=AAAAAAAAAAAAAAAAAAAAAEC40eM_RsniqGBcnyQTrl_H9o4NGMq5l_ZOV_pHHDbw&signer=media-rpc&token=AAIAAU0AJDk3ZjViN2RmLTNiNzAtNGVhOS1iNGFjLWUwMTkzMGNmZTA3NwAAAAABoe42pOjK6Hvy3XCprBYK7BTH58BzUtdQOie1bk7PgG305bsusA'
+          CANDIDATE2: 'https://media.canva.com/v2/image-resize/format:PNG/height:941/quality:100/uri:ifs%3A%2F%2FM%2F97f5b7df-3b70-4ea9-b4ac-e01930cfe077/watermark:F/width:1672?token=AAIAAU0AJDk3ZjViN2RmLTNiNzAtNGVhOS1iNGFjLWUwMTkzMGNmZTA3NwAAAAABoe42pOjK6Hvy3XCprBYK7BTH58BzUtdQOie1bk7PgG305bsusA'
+          CANDIDATE3: 'https://media.canva.com/MAHbPRfKgcc/1/0/1600w.png'
+        run: |
+          for i in 0 1 2 3; do
+            key="CANDIDATE$i"
+            url="${!key}"
+            echo "Trying source $i"
+            curl --location --fail --silent --show-error --max-time 20 "$url" -o /tmp/candidate.png || continue
+            file /tmp/candidate.png
+            dim=$(identify -format '%w' /tmp/candidate.png 2>/dev/null || echo 0)
+            if [ "$dim" -ge 1000 ]; then
+              mkdir -p assets
+              cp /tmp/candidate.png assets/ski-hero.png
+              echo "Retrieved high-res width $dim"
+              break
+            fi
+          done
+          if [ ! -f assets/ski-hero.png ]; then echo 'No high-resolution Canva URL available'; exit 1; fi
+      - name: Save image in repository
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ski-hero.png
+          git diff --cached --quiet || (git commit -m 'Add approved ski camp high-resolution hero photo' && git push)
