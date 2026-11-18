@@ -215,6 +215,19 @@ section{padding:55px 20px 0}
 .hero-photo{background-image:linear-gradient(90deg,rgba(3,13,29,.18),rgba(3,15,32,.03)),url("assets/red-skier.jpg");background-repeat:no-repeat;background-size:cover,auto 370px;background-position:center,calc(100% - 9%) 21%;transform:none;filter:drop-shadow(0 20px 36px rgba(0,0,0,.28));animation:none}
 @media(min-width:900px){.hero-photo{background-size:cover,auto 500px;background-position:center,calc(100% - 12%) 48%}}
 @media(max-width:620px){.hero-photo{background-image:linear-gradient(0deg,#061525 0%,rgba(4,15,35,.1) 58%,transparent 100%),url("assets/red-skier.jpg");background-size:cover,auto 335px;background-position:center,center 9%}}
+
+/* FINAL HERO PHOTO: original red skier, high resolution (1425×1680) */
+.hero{background:radial-gradient(ellipse at 80% 25%,#123e65 0%,#071b32 55%,#040c1a 100%)}
+.hero-photo{background-image:linear-gradient(90deg,rgba(2,11,24,.58) 0%,rgba(3,13,27,.10) 47%,rgba(3,13,27,.02) 100%),linear-gradient(0deg,#061525 0%,rgba(4,15,35,.10) 50%,transparent 100%),url("assets/red-skier-hq.webp");background-size:cover,cover,auto 95%;background-repeat:no-repeat;background-position:center,center,90% 38%;filter:none;transform:none;animation:none}
+@media(min-width:900px){
+.hero-photo{background-size:cover,cover,auto 112%;background-position:center,center,93% 45%}
+.hero-in{max-width:630px}
+}
+@media(max-width:620px){
+.hero-photo{background-image:linear-gradient(0deg,#061525 0%,rgba(4,15,35,.92) 17%,rgba(4,15,35,.3) 46%,rgba(4,15,35,.02) 78%),url("assets/red-skier-hq.webp");background-size:cover,auto 75%;background-position:center,center 0%;background-repeat:no-repeat}
+.hero-in{padding-top:20px}
+}
+
 </style>
 </head>
 <body>
