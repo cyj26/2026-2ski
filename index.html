@@ -137,30 +137,83 @@ footer{max-width:560px;margin:46px auto 0;padding:0 20px 20px;text-align:center;
 .cta.show{transform:none}
 .cta .btn{max-width:520px;margin:0 auto;padding:15px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv,.js .reveal{opacity:1;transform:none}.bar{height:0}}
+
+/* 2026-2 SKI CAMP | PHOTO EDITORIAL REDESIGN */
+:root{--bg:#040b16;--ice:#7edfff;--blue:#087fce;--red:#f05248;--gold:#7edfff;--ink:#f6faff;--mut:#b4c5dc;--line:rgba(142,220,255,.24)}
+body{background:linear-gradient(180deg,#030c1a,#061c35 58%,#040c18);font-family:"Pretendard",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif}
+body::before{background:radial-gradient(110% 110% at 50% 50%,transparent 65%,rgba(0,0,0,.25) 100%);z-index:39}
+body::after{opacity:.035}
+.hero{min-height:820px;min-height:100svh;isolation:isolate;text-align:left;align-items:stretch;justify-content:flex-end;padding:100px max(26px,calc((100vw - 1120px)/2)) 115px;background:#061629}
+.hero-photo{position:absolute;inset:0;z-index:-3;background-image:linear-gradient(90deg,rgba(2,9,23,.91) 0%,rgba(2,15,35,.64) 43%,rgba(5,24,48,.10) 100%),linear-gradient(0deg,#061525 0%,rgba(4,15,35,.15) 48%,rgba(3,10,23,.38) 100%),url("https://images.unsplash.com/photo-1709442847241-814fdbce8501?auto=format&fit=crop&w=1800&q=85");background-size:cover;background-position:50% 45%;transform:scale(1.04);animation:photoenter 2.5s ease-out both}
+.hero-glow{position:absolute;inset:0;z-index:-2;pointer-events:none;background:linear-gradient(120deg,rgba(10,123,201,.28),transparent 45%),radial-gradient(65% 55% at 80% 15%,rgba(39,145,215,.10),transparent)}
+@keyframes photoenter{from{transform:scale(1.14);filter:brightness(.7)}to{transform:scale(1.04);filter:brightness(1)}}
+#snow{z-index:2;opacity:.65}
+.hero-in{z-index:4;max-width:790px;width:100%;margin:0}
+.pre{font-size:12px;letter-spacing:.18em;font-weight:800;color:#d7eaff;text-transform:uppercase;display:flex;align-items:center;gap:14px}
+.pre-line{width:34px;height:1px;background:#65d2ff}
+.yr{display:block;margin:22px 0 0;font-size:clamp(35px,5.7vw,70px);font-weight:900;line-height:1.15;letter-spacing:-.065em;color:white;text-shadow:0 8px 30px rgba(0,0,0,.3)}
+.title{margin:0;font-style:normal;line-height:1.05}
+.title .l1{font-size:clamp(72px,12vw,154px);letter-spacing:-.095em;line-height:1.12;font-style:italic;white-space:nowrap;color:#eaf9ff;background:linear-gradient(165deg,#fff 22%,#b3edff 62%,#27b9f3 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;filter:drop-shadow(0 9px 15px rgba(0,19,40,.4));text-shadow:none}
+.tag{font-size:clamp(19px,2.2vw,29px);margin:25px 0 0;font-weight:800;line-height:1.5;color:#fff;text-shadow:0 2px 16px rgba(0,0,0,.55)}
+.tag strong{color:#d0eafb}
+.badges{justify-content:flex-start;gap:10px;margin-top:24px}
+.badge{background:rgba(3,22,48,.67);border:1px solid rgba(127,219,255,.8);color:#e9faff;padding:11px 19px;font-size:15px;box-shadow:inset 0 0 12px rgba(31,165,246,.14),0 0 15px rgba(10,146,220,.1)}
+.hero-meta{display:flex;gap:16px;flex-wrap:wrap;margin-top:32px;font-size:12px;font-weight:700;letter-spacing:.13em;color:#b0d5ef}
+.hero .btn{display:inline-flex;align-items:center;justify-content:space-between;gap:30px;width:auto;max-width:none;min-width:250px;margin:22px 0 0;padding:17px 26px}
+.btn{background:linear-gradient(110deg,#0464a8,#039cdb);box-shadow:0 11px 30px rgba(0,109,186,.28);border:1px solid rgba(125,219,255,.42);border-radius:12px}
+.btn::after{animation-duration:4s}
+.scroll{font-size:10px;letter-spacing:.25em;left:auto;right:36px;bottom:25px;transform:none}
+.ticker{background:#0785c7;color:#fff;border:0;box-shadow:0 8px 30px rgba(0,0,0,.2)}
+section{max-width:900px;padding:72px 28px 0}
+.kicker{font-weight:800;color:#5bcafd}
+h2{font-size:clamp(28px,4.2vw,42px);letter-spacing:-.055em}
+h2 span{color:#67d9ff}
+.cd div{background:linear-gradient(180deg,rgba(25,91,148,.32),rgba(8,32,64,.7));border:1px solid var(--line);border-radius:16px}
+.ticket{background:linear-gradient(125deg,rgba(19,72,121,.83),rgba(4,24,48,.91));box-shadow:0 20px 50px rgba(0,0,0,.19)}
+.cell{background:linear-gradient(145deg,rgba(27,70,117,.32),rgba(5,22,46,.85));border-color:var(--line)}
+.panel{background:linear-gradient(145deg,rgba(19,56,94,.55),rgba(5,22,43,.87));border:1px solid var(--line);box-shadow:0 20px 50px rgba(0,0,0,.2)}
+input[type=text],input[type=tel],.chip span{background:rgba(2,12,27,.65)}
+.chip input:checked + span{background:rgba(0,134,204,.3)}
+.consent input{accent-color:#0b9ee1}
+.dday{background:rgba(0,130,200,.17);border-color:rgba(80,196,249,.55);color:#a8e7ff}
+.cta{background:linear-gradient(180deg,transparent,rgba(3,12,27,.94) 38%)}
+.stub{background:linear-gradient(135deg,#8fe3ff,#2a9dd4);color:#07213a}
+@media(min-width:900px){.hero{min-height:780px}.hero-photo{background-position:center 44%}.hero-in{max-width:900px}}
+@media(max-width:620px){
+.hero{min-height:790px;min-height:100svh;padding:100px 22px 100px;justify-content:flex-end}
+.hero-photo{background-image:linear-gradient(0deg,rgba(3,11,25,.98) 0%,rgba(3,14,30,.83) 35%,rgba(4,20,42,.07) 83%),linear-gradient(180deg,rgba(2,10,24,.20),transparent 35%),url("https://images.unsplash.com/photo-1709442847241-814fdbce8501?auto=format&fit=crop&w=1000&q=85");background-position:57% center}
+.yr{font-size:clamp(31px,9vw,47px);margin-top:18px}
+.title .l1{font-size:clamp(57px,15.3vw,93px);letter-spacing:-.09em}
+.tag{font-size:19px;margin-top:15px}
+.badges{gap:8px;margin-top:18px}
+.badge{font-size:12px;padding:9px 11px}
+.hero-meta{gap:5px 14px;margin-top:22px;font-size:10px}
+.hero .btn{width:100%;margin-top:22px}
+.scroll{display:none}
+section{padding:55px 20px 0}
+}
+@media(prefers-reduced-motion:reduce){.hero-photo{animation:none;transform:none}}
+
 </style>
 </head>
 <body>
 
 <header class="hero" id="top">
-  <div class="sun"></div><div class="streaks"></div>
-  <svg class="mt m1" data-p=".10" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 160 L50 108 L92 142 L150 66 L212 132 L262 88 L322 142 L362 104 L400 136 L400 260 L0 260Z" fill="#1c49a3" opacity=".75"/><path d="M150 66 L134 92 L146 87 L153 99 L161 86 L170 94Z" fill="#e6f7ff" opacity=".9"/><path d="M262 88 L250 106 L259 102 L265 110 L272 100 L278 106Z" fill="#e6f7ff" opacity=".8"/></svg>
-  <svg class="mt m2" data-p=".05" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 170 L64 118 L116 168 L188 98 L258 170 L322 124 L400 176 L400 260 L0 260Z" fill="#0b2559"/><path d="M188 98 L170 124 L182 118 L190 130 L199 117 L208 126Z" fill="#cfeeff" opacity=".85"/></svg>
-  <svg class="mt m3" data-p="0" viewBox="0 0 400 260" preserveAspectRatio="none" aria-hidden="true"><path d="M0 120 L90 70 L170 112 L260 62 L400 118 L400 260 L0 260Z" fill="#050b1f"/></svg>
+  <div class="hero-photo" role="img" aria-label="눈보라를 일으키며 설원을 내려오는 스키어 실사 사진"></div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <canvas id="snow"></canvas>
-  <div class="bar t"></div><div class="bar b"></div>
-
   <div class="hero-in" id="heroIn">
-    <div class="pre rv" style="--d:1.2s"><b></b>U1 비교과 프로그램</div>
+    <div class="pre rv" style="--d:.1s">U1 UNIVERSITY <span class="pre-line"></span> 비교과 프로그램</div>
     <h1 class="title" aria-label="2026-2학기 스키캠프">
-      <div class="yr rv" style="--d:1.35s">2026-2학기</div>
-      <span class="l1 rv" style="--d:1.5s">SKI</span>
-      <span class="l2 rv" style="--d:1.7s">CAMP</span>
+      <span class="yr rv" style="--d:.2s">2026-2학기</span>
+      <span class="l1 rv" style="--d:.35s">스키캠프</span>
     </h1>
-    <p class="tag rv" style="--d:1.95s">설원 위, <em>가장 짜릿한 수업</em>.<br>비교과 프로그램 · 2박 3일</p>
-    <div class="badges rv" style="--d:2.1s"><span class="badge">🔰 초보자 대환영</span><span class="badge">⛷️ 자유스키 가능</span></div>
-    <a class="btn rv" style="--d:2.25s" href="#book">지금 예매하기 →</a>
+    <p class="tag rv" style="--d:.5s">처음이어도 괜찮습니다.<br><strong>타본 적 있다면, 마음껏 타세요.</strong></p>
+    <div class="badges rv" style="--d:.6s"><span class="badge">✦ 초보자 대환영</span><span class="badge">✦ 자유스키 가능</span></div>
+    <div class="hero-meta rv" style="--d:.7s"><span>2026. 12. 14 — 12. 16</span><span>HIGH1 RESORT · JEONGSEON</span></div>
+    <a class="btn rv" style="--d:.8s" href="#book">참가 신청하기 <span aria-hidden="true">↗</span></a>
   </div>
-  <div class="scroll">SCROLL</div>
+  <div class="scroll">SCROLL TO EXPLORE</div>
 </header>
 
 <div class="ticker" aria-hidden="true"><div>NOW BOOKING ★ 초보자 대환영 ★ 자유스키 가능 ★ 12.14 – 12.16 ★ 정선 하이원리조트 ★ 선착순 35명 ★ NOW BOOKING ★ 초보자 대환영 ★ 자유스키 가능 ★ 12.14 – 12.16 ★ 정선 하이원리조트 ★ 선착순 35명 ★ </div></div>
@@ -184,7 +237,7 @@ footer{max-width:560px;margin:46px auto 0;padding:0 20px 20px;text-align:center;
   <div class="grid">
     <div class="cell reveal" style="--d:.05s"><span>PRICE</span><b>약 25만원</b><small>교통비 별도<br>인원에 따라 변동 가능</small></div>
     <div class="cell reveal" style="--d:.12s"><span>SEATS</span><b>35명</b><small>20명 미만 신청 시<br>개설이 취소될 수 있습니다</small></div>
-    <div class="cell w reveal"><span>BOOKING</span><b>2026.11.18.(수) ~ 11.30.(월)</b><small>U1 Story &gt; 비교과프로그램 &gt; 2026-2학기 스키캠프</small></div>
+    <div class="cell w reveal"><span>BOOKING</span><b>2026.11.18.(수) ~ 11.30.(월)</b><small>홈페이지 신청 양식 작성 · 2026-2학기 스키캠프</small></div>
     <div class="cell w reveal"><span>DIRECTOR</span><b>자율설계학부 최영진 교수</b></div>
   </div>
 </section>
