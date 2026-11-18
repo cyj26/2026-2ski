@@ -31,12 +31,12 @@ body::after{content:"";position:fixed;inset:-50%;z-index:41;pointer-events:none;
 .hero-in{position:relative;z-index:6;will-change:transform,opacity}
 .rv{opacity:0;transform:translateY(26px);animation:up .9s cubic-bezier(.2,.8,.2,1) forwards;animation-delay:var(--d,0s)}
 @keyframes up{to{opacity:1;transform:none}}
-.pre{font-size:11px;letter-spacing:.42em;color:var(--ice);opacity:.9}
+.pre{font-size:15px;font-weight:800;letter-spacing:.18em;color:var(--ice);opacity:.95}
 .pre b{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--red);margin-right:8px;animation:blink 1.2s infinite;vertical-align:1px}
 @keyframes blink{50%{opacity:.2}}
-.yr{margin:18px 0 0;font-size:17px;font-weight:700;letter-spacing:.2em;color:#fff}
+.yr{margin:16px 0 6px;font-size:clamp(30px,9vw,48px);font-weight:900;letter-spacing:.04em;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.45)}
 .title{margin:2px 0 0;line-height:.86;font-weight:900;font-style:italic;letter-spacing:-.03em}
-.title .l1{display:block;font-size:clamp(96px,34vw,190px);transform:skewX(-8deg);background:linear-gradient(100deg,#fff 38%,var(--ice) 50%,#fff 62%);background-size:260% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4.5s 2s ease-in-out infinite;filter:drop-shadow(0 8px 30px rgba(47,123,255,.6))}
+.title .l1{display:block;font-size:clamp(96px,34vw,190px);color:#fff;text-shadow:0 0 22px rgba(143,227,255,.75),0 8px 34px rgba(47,123,255,.7)}
 .title .l2{display:block;font-size:clamp(64px,23vw,130px);transform:skewX(-8deg);color:transparent;-webkit-text-stroke:2px var(--ice);filter:drop-shadow(0 0 18px rgba(143,227,255,.55))}
 @keyframes shine{0%{background-position:130% 0}60%,100%{background-position:-60% 0}}
 .tag{margin:20px 0 0;font-size:16px;color:#fff;opacity:.92;line-height:1.5;font-weight:600}
@@ -150,7 +150,7 @@ footer{max-width:560px;margin:46px auto 0;padding:0 20px 20px;text-align:center;
   <div class="bar t"></div><div class="bar b"></div>
 
   <div class="hero-in" id="heroIn">
-    <div class="pre rv" style="--d:1.2s"><b></b>YUWON ORIGINAL PROGRAM</div>
+    <div class="pre rv" style="--d:1.2s"><b></b>U1 비교과 프로그램</div>
     <h1 class="title" aria-label="2026-2학기 스키캠프">
       <div class="yr rv" style="--d:1.35s">2026-2학기</div>
       <span class="l1 rv" style="--d:1.5s">SKI</span>
