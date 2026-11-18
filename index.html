@@ -194,6 +194,21 @@ section{padding:55px 20px 0}
 }
 @media(prefers-reduced-motion:reduce){.hero-photo{animation:none;transform:none}}
 
+
+/* MATCH ORIGINAL POSTER: RED JACKET SKIER */
+.hero{background:#07182a}
+.hero-photo{background-image:linear-gradient(90deg,rgba(2,9,23,.28),rgba(2,15,35,.10)),linear-gradient(0deg,#061525 0%,rgba(4,15,35,.08) 65%),url("assets/red-skier.jpg");background-position: center,center,75% 39%;background-size:cover,cover,cover;background-repeat:no-repeat}
+@media(min-width:900px){
+.hero{padding-left:max(30px,calc((100vw - 1120px)/2))}
+.hero-photo{background-size:cover,cover,58% auto;background-position:center,center,95% 37%;background-color:#07182a}
+.hero-in{max-width:620px}
+}
+@media(max-width:620px){
+.hero{justify-content:flex-end}
+.hero-photo{background-image:linear-gradient(0deg,#061525 0%,rgba(4,15,35,.96) 15%,rgba(4,15,35,.13) 53%,rgba(4,15,35,.08) 100%),url("assets/red-skier.jpg");background-size:cover,auto 65%;background-position:center,center top;background-repeat:no-repeat}
+.hero-in{padding-top:25px}
+}
+
 </style>
 </head>
 <body>
