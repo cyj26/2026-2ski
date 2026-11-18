@@ -1,0 +1,26 @@
+name: Add exact poster skier image
+on:
+  push:
+    paths:
+      - '.github/workflows/import-skier.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  import-image:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch red skier crop from poster
+        env:
+          PHOTO_URL: 'https://media.canva.com/v2/image-resize/format:JPG/height:200/quality:75/uri:ifs%3A%2F%2FM%2F8a9080d6-fd41-47fb-93f9-2bceb2d68dfc/watermark:F/width:194?csig=AAAAAAAAAAAAAAAAAAAAAPsbVLZLGtKCi-Y-JhNZr2GZlLN2PpMwmtrNaJlGekEL&exp=1794995438&osig=AAAAAAAAAAAAAAAAAAAAAC62lPi-hPXJToVQIylxvrvMBpEokI52D_SsglzhLfMk&signer=media-rpc&token=AAIAAU0AJDhhOTA4MGQ2LWZkNDEtNDdmYi05M2Y5LTJiY2ViMmQ2OGRmYwAAAAABoe4QwbApgGIusHIR5aI-TFQT0BhshiXYHMgelr5ZFr5WL-nDYQ&x-canva-quality=thumbnail'
+        run: |
+          mkdir -p assets
+          curl --fail --location --retry 3 "$PHOTO_URL" -o assets/red-skier.jpg
+          file assets/red-skier.jpg
+      - name: Commit photo
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/red-skier.jpg
+          git diff --cached --quiet || (git commit -m 'Add exact red skier photo from ski camp poster' && git push)
