@@ -1,0 +1,29 @@
+name: Install approved ski camp hero image
+on:
+  push:
+    paths:
+      - '.github/workflows/assemble-hero.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Assemble original full resolution hero
+        run: |
+          mkdir -p assets
+          cat .github/assets/chunk{0..4}.txt | base64 --decode > assets/ski-hero.avif
+          echo '9f2beb9ee58895e755ca693e8661b52a1170c080101c4c2db3c626bacfc29ff4  assets/ski-hero.avif' | sha256sum --check
+          test "$(stat -c%s assets/ski-hero.avif)" = "18616"
+          file assets/ski-hero.avif
+      - name: Commit approved image to Pages
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add assets/ski-hero.avif
+          if ! git diff --cached --quiet; then
+            git commit -m 'Add approved red skier website hero image'
+            git push
+          fi
